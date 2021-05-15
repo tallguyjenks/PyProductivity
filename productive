@@ -1,11 +1,12 @@
 #!/usr/local/bin/python3.9
 
+############################################################################################
 # SPAWNING THREADS FOR COMPUTATION:
-#   well, 1 thread, if you do anything computational expensive, tk will hang... so spawn a thread for work.. etc
-
+# well, 1 thread, if you do anything computational expensive,
+#       tk will hang... so spawn a thread for work.. etc
 ############################################################################################
 # NEXT Stream
-# flesh out the stats frame to show some nice visuals
+#       flesh out the stats frame to show some nice visuals
 ############################################################################################
 
 import tkinter as tk
