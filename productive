@@ -1,17 +1,19 @@
 #!/usr/local/bin/python3.9
 
+############################################################################################
 # SPAWNING THREADS FOR COMPUTATION:
-#   well, 1 thread, if you do anything computational expensive, tk will hang... so spawn a thread for work.. etc
-
+# well, 1 thread, if you do anything computational expensive,
+#       tk will hang... so spawn a thread for work.. etc
 ############################################################################################
 # NEXT Stream
-# flesh out the stats frame to show some nice visuals
+#       flesh out the stats frame to show some nice visuals
 ############################################################################################
 
 import tkinter as tk
 from tkinter import Button, Entry
 from tkinter.ttk import Notebook, Label, Frame
 from PIL import Image, ImageTk
+from tkcalendar import Calendar
 import pandas as pd
 from datetime import datetime
 from matplotlib.figure import Figure
@@ -86,6 +88,9 @@ def clickSubmitRecord():
 
     #subfrEntryFields.pack_forget()
 
+def get_date():
+    recordDate_varz.config(text = "Selected Date is: " + cal.get_date())
+
 # Establish the Application instance
 # Name the window's title
 # Determine starting size and coordinates
@@ -152,6 +157,13 @@ inputDate = Entry(subsubfrEntryFieldDate,
                     font=("Norse", 16, "italic"))
 inputDate.insert(0, today)
 inputDate.pack(side=tk.LEFT)
+
+cal = Calendar(subsubfrEntryFieldDate, selectmode = 'day',
+                    year = 2021, month = 5,
+                    day = 22)
+cal.pack(pady = 20)
+
+
 
 ### Render
 subsubfrEntryFieldDate.pack(side=tk.TOP)
